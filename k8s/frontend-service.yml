@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+  namespace: chat-app
+spec:
+  type: ClusterIP   # default, can omit
+  selector:
+    app: frontend
+  ports:
+    - protocol: TCP
+      port: 80        # service port
+      targetPort: 80  # container port
